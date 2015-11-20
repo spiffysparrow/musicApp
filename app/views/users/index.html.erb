@@ -1,0 +1,9 @@
+<h3>All Users! HAHAHAHA</h3>
+
+
+
+<ul>
+  <% @users.each do |user| %>
+  <li> <%= link_to user.email, user_url(user) %> </li>
+  <% end %>
+</ul>

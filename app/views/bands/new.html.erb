@@ -1,0 +1,7 @@
+<h3>Add a New Band</h3>
+
+<form class="NewBand" action="<%= bands_url %>" method="post">
+  <%= create_auth_input.html_safe %>
+  <input type="text" name="band[name]" value=" <%= @band.name %> ">
+  <input type="submit" value="Add Band">
+</form>

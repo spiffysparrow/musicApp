@@ -1,0 +1,12 @@
+<h3><%= header_text %></h3>
+<form action= <%= my_action %> method="post">
+  <%= create_auth_input.html_safe %>
+
+  <label for="email">Email</label>
+  <input type="text" name="user[email]" value="<%= user.email %>" class="email">
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" class="password">
+  
+  <input type="submit" value=" <%= submit_button_text %>">
+</form>

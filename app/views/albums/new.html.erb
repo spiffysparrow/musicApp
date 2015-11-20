@@ -1,0 +1,30 @@
+<h3>Add a New Album</h3>
+
+<form class="NewAlbum" action="<%= albums_url %>" method="post">
+  <%= create_auth_input.html_safe %>
+
+  <label for="band">Band</label>
+  <select name="album[band_id]" class="band">
+    <% Band.all.each do |band| %>
+      <option value="<%=band.id%>"
+        <%= "selected" if @album.band_id==band.id %> >
+        <%=band.name%>
+      </option>
+    <% end %>
+  </select>
+  <br/>
+  <label for="name">Album Name</label>
+  <input type="text" name="album[name]" class="name" value="<%= @album.name %>">
+
+  <br/>
+  <label for="studio_album">Studio</label>
+  <input type="radio" name="album[studio_album]" id="studio_album" value="t"
+  <%= 'checked="checked"' if @album.studio_album=='t' %>>
+
+  <label for="live_album">Live Album?</label>
+  <input type="radio" name="album[studio_album]" id="live_album" value="f"
+  <%= 'checked="checked"' if @album.studio_album=='f' %>>
+
+  <br/>
+  <input type="submit" value="Add Album">
+</form>
