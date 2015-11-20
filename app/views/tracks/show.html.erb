@@ -3,6 +3,8 @@
 </p>
 <h3> <%= @track.name %> </h3>
 
+<%= button_to "Delete", track_url(@track), method: "delete" %>
+
 <p>
   <%= @track.lyrics %>
 </p>
